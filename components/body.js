@@ -1,8 +1,17 @@
 import React, {Component} from 'react';
 import {
     View,
-    SectionList
+    SectionList,
+    StyleSheet
 } from 'react-native';
+import AddNewModal from './addNewModal'
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'lightblue',
+        flex: 1,
+    }
+});
 
 class SectionHeader extends Component {
     render() {
@@ -55,6 +64,7 @@ class Body extends Component {
                     renderSectionHeader={({section: {title}}) => <SectionHeader />}
                     sections={this.state.data}
                     keyExtractor={(item, index) => item + index}
+                    style={styles.container}
                 />
             </View>
         );
